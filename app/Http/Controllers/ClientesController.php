@@ -9,18 +9,12 @@ use Session;
 
 class ClientesController extends Controller
 {
-    public static $counter = 0;
-
 	public function index()
     {
     	$clientes = Cliente::get();
     	return view('clientes/lista', ['clientes' => $clientes]);
     }
 
-    public function clientAmmount()
-    {
-        return self::$count++;
-    }
     public function novo()
     {
     	return view('clientes/formulario');
@@ -33,7 +27,6 @@ class ClientesController extends Controller
     	$cliente = $cliente->create($request->all());
 
     	Session::flash('message', 'Cliente cadastrado com sucesso!');
-        clientAmmount();
         return Redirect::to('clientes/novo');
     }
 
