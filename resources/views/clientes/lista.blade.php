@@ -29,9 +29,9 @@
                                 <td>{{$cliente->email}}</td>
                                 <td>{{$cliente->telefone}}</td>
                                 <td>
-                                    <a href="clientes/{{$cliente->id}}/editar" class="btn btn-default"> Editar </button>
-                                        {!!Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' => 'display:inline;'])!!}
-                                    <button type="submit" class="btn btn-default">Excluir</button>
+                                    <button class="btn btn-sm" onclick="location.href = 'clientes/{{$cliente->id}}/editar';"> Editar </button>
+                                        {!!Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' => 'display:inline;', 'onsubmit' => 'return confirm("Tem certeza que deseja remover esse usuário?")'])!!}
+                                    <button type="submit" class="btn btn-sm" onclick="myFunction()">Excluir</button>
                                         {!! Form::close() !!}
                                 </td>
                             </tr>

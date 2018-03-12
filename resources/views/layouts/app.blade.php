@@ -10,16 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ URL::asset('js/function.js') }}"></script>
 
-    <style>
-        .navbar-brand
-        {
-            position: absolute;
-            left: 50%;
-        }
-    </style>
+    <!-- Styles -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -50,7 +46,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if (!Auth::guest())
-                        <li><a href="{{ url("/clientes")}}">Administrador </a> </li>
+                        <li> <span id="admin">Administrador</> </li>
                         @endif
                         &nbsp;
                     </ul>
